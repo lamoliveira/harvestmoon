@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => (
   <footer className="footer">
-    <span>Harvest Moon 2018 - Luiz and Tyler</span>
+    <span>Click Puppy 2018 - Luiz Oliveira</span>
   </footer>
 );
 

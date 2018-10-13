@@ -1,7 +1,7 @@
 {
-  "name": "harvestmoon",
+  "name": "reactpoker",
   "version": "1.0.0",
-  "description": "Harvest Moon Orlando",
+  "description": "React Poker",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -13,24 +13,25 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "dependencies": {
-    "axios": "^0.16.2",
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.0.17"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lamoliveira/harvestmoon.git"
-  },
-  "author": "Luiz Oliveira and Tyler Thomson",
+  "author": "luiz oliveira",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
   },
-  "bugs": {
-    "url": "https://github.com/lamoliveira/harvestmoon/issues"
+  "dependencies": {
+    "axios": "^0.16.2",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.0.17",
+    "yarn": "^1.12.0"
   },
-  "homepage": "https://github.com/lamoliveira/harvestmoon#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamoliveira/reactpoker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lamoliveira/reactpoker/issues"
+  },
+  "homepage": "https://github.com/lamoliveira/reactpoker#readme"
 }

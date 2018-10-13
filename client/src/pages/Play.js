@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import FriendCard from "../components/FriendCard";
 import Wrapper from "../components/Wrapper";
 import Title from "../components/Title";
+//import friends from "./friends.json";
 import animals from "./animals.json";
 
 import Nav from "../components/nav";

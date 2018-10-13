@@ -6,58 +6,32 @@ import "./Navbar.css";
 const Navbar = props => (
   <nav id="sitenav" className="navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand" to="/">
-      HarvestMoon
+      ClickyPuppy
     </Link>
     <div>
       <ul className="navbar-nav">
-
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link
-            to="/howtogrow"
+            to="/"
             className={
-              window.location.pathname === "/howtogrow"
+              window.location.pathname === "/" || window.location.pathname === "/about"
                 ? "nav-link active"
                 : "nav-link"
             }
           >
-            Grow
+            Play
           </Link>
-        </li>
-        
+        </li> */}
         <li className="nav-item">
           <Link
-            to="/howtoshare"
+            to="/play"
             className={
-              window.location.pathname === "/howtoshare"
+              window.location.pathname === "/play"
                 ? "nav-link active"
                 : "nav-link"
             }
           >
-            Share
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            to="/growers"
-            className={
-              window.location.pathname === "/growers"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Growers
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            to="/neighbors"
-            className={
-              window.location.pathname === "/neighbors"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Neighbors
+            Play
           </Link>
         </li>
         <li className="nav-item">
@@ -69,7 +43,7 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            WishList
+            Discover
           </Link>
         </li>
         <li className="nav-item">
@@ -81,31 +55,19 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            Recipes
+            Search
           </Link>
         </li>
         <li className="nav-item">
           <Link
-            to="/join"
+            to="/tournament"
             className={
-              window.location.pathname === "/join"
+              window.location.pathname === "/tournament"
                 ? "nav-link active"
                 : "nav-link"
             }
           >
-            Join
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            to="/login"
-            className={
-              window.location.pathname === "/login"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Login
+            Tournament
           </Link>
         </li>
       </ul>

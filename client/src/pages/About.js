@@ -6,34 +6,27 @@ import Col from "../components/Col";
 
 const About = () => (
   <div>
-    <Hero backgroundImage="../../assets/img/sunflower.jpg">
-      <h1>Harvest Moon</h1>
-      <h2>Very Local + Totally Organic + Always Sharing</h2>
+    <Hero backgroundImage="https://i.imgur.com/knvH0T7.jpg">
+      <h1>Click-Game</h1>
+      <h2>You can choose what kind of image you want to play</h2>
     </Hero>
     <Container style={{ marginTop: 30 }}>
       <Row>
         <Col size="md-12">
-          <h1>Welcome To our Comnunity!</h1>
+          <h1>Welcome To Puppies Game!</h1>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
           <p>
-          - Is a group that promotes Urban Food Production and Distribution.
+            Choose Play to enjoy our memory game
           </p>
           <p>
-          - Grow the food you eat and share it with your neighbors.
+            Choose Discover to see other puppies you'd like to meet
           </p>
           <p>
-          - Turn your Lawn into Food.
+            Choose Search to find beautiful pictures of your prefered breed
           </p>
-          <p>
-          - Harvest Moon will provide you with the seeds, plants and guidance to plant your own urban garden.
-          </p>
-          <p>
-          - Once your garden is ready for harvest, our very local network will help you share the Bounty.
-          </p>
-  
         </Col>
       </Row>
     </Container>
