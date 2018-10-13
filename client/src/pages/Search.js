@@ -7,20 +7,20 @@ import Alert from "../components/Alert";
 
 class Search extends Component {
   state = {
-    search: "bulldog",
+    search: "",
     breeds: [],
     results: [],
     error: ""
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
-  componentDidMount() {
+/*  componentDidMount() {
 //    this.setState({ search: "bulldog" });
     API.getBaseBreedsList()
       .then(res => this.setState({ breeds: res.data.message }))
       .catch(err => console.log(err));
       this.handleFormSubmit();
-  }
+  }*/
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
@@ -46,7 +46,7 @@ class Search extends Component {
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Search By Breed!</h1>
+          <h1 className="text-center">Search recipes By Products!</h1>
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}

@@ -6,32 +6,58 @@ import "./Navbar.css";
 const Navbar = props => (
   <nav id="sitenav" className="navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand" to="/">
-      ClickyPuppy
+      HarvestMoon
     </Link>
     <div>
       <ul className="navbar-nav">
-        {/* <li className="nav-item">
-          <Link
-            to="/"
-            className={
-              window.location.pathname === "/" || window.location.pathname === "/about"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Play
-          </Link>
-        </li> */}
+
         <li className="nav-item">
           <Link
-            to="/play"
+            to="/howtogrow"
             className={
-              window.location.pathname === "/play"
+              window.location.pathname === "/howtogrow"
                 ? "nav-link active"
                 : "nav-link"
             }
           >
-            Play
+            Grow
+          </Link>
+        </li>
+        
+        <li className="nav-item">
+          <Link
+            to="/howtoshare"
+            className={
+              window.location.pathname === "/howtoshare"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Share
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/growers"
+            className={
+              window.location.pathname === "/growers"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Growers
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/neighbors"
+            className={
+              window.location.pathname === "/neighbors"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Neighbors
           </Link>
         </li>
         <li className="nav-item">
@@ -43,7 +69,7 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            Discover
+            WishList
           </Link>
         </li>
         <li className="nav-item">
@@ -55,19 +81,31 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            Search
+            Recipes
           </Link>
         </li>
         <li className="nav-item">
           <Link
-            to="/tournament"
+            to="/join"
             className={
-              window.location.pathname === "/tournament"
+              window.location.pathname === "/join"
                 ? "nav-link active"
                 : "nav-link"
             }
           >
-            Tournament
+            Join
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/login"
+            className={
+              window.location.pathname === "/login"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Login
           </Link>
         </li>
       </ul>
