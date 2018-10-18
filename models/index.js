@@ -1,5 +1,4 @@
 module.exports = {
-  Book: require("./book"),
-  League: require("./league"),
-  Tournament: require("./tournament")
-};
+	User:require("./User.js")
+}
+//add more models as you create them

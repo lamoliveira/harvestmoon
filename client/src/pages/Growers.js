@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 
-const Growers = () => (
+const Growers = (props) => (
   <div>
     <Hero backgroundImage="../../assets/img/garden.jpg">
       <h1>Harvest Moon</h1>
@@ -14,6 +14,7 @@ const Growers = () => (
       <Row>
         <Col size="md-12">
           <h1>Growing!</h1>
+          <p> Welcome {props.auth.username}</p>
         </Col>
       </Row>
       <Row>

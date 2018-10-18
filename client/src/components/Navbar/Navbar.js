@@ -5,7 +5,7 @@ import "./Navbar.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
   <nav id="sitenav" className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link className="navbar-brand" to="/">
+    <Link className="navbar-brand" to="/about">
       HarvestMoon
     </Link>
     <div>
@@ -23,7 +23,7 @@ const Navbar = props => (
             Grow
           </Link>
         </li>
-        
+
         <li className="nav-item">
           <Link
             to="/howtoshare"
@@ -45,7 +45,8 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            Growers
+            {props.auth.username ? "Growers" : ""
+            } 
           </Link>
         </li>
         <li className="nav-item">
@@ -96,6 +97,22 @@ const Navbar = props => (
             Join
           </Link>
         </li>
+
+                <li className="nav-item">
+          <Link
+            to="/logout"
+            className={
+              window.location.pathname === "/logout"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            {props.auth.username ? "Logout" : ""
+            }
+          </Link>
+
+        </li>
+        
         <li className="nav-item">
           <Link
             to="/login"
@@ -105,9 +122,11 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            Login
+            {props.auth.username ? props.auth.username : "Login"
+            }
           </Link>
         </li>
+
       </ul>
     </div>
   </nav>

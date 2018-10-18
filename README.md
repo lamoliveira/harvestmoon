@@ -1,2 +1,0 @@
-# reactpoker
-React Poker

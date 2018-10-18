@@ -1,37 +1,30 @@
 {
-  "name": "reactpoker",
+  "name": "test",
   "version": "1.0.0",
-  "description": "React Poker",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
-    "install": "cd client && yarn install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "test": "jest"
   },
-  "author": "luiz oliveira",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
-  },
   "dependencies": {
-    "axios": "^0.16.2",
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.0.17",
-    "yarn": "^1.12.0"
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.3.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lamoliveira/reactpoker.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lamoliveira/reactpoker/issues"
-  },
-  "homepage": "https://github.com/lamoliveira/reactpoker#readme"
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4"
+  }
 }
