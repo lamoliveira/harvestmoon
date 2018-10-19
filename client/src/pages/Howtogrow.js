@@ -6,18 +6,20 @@ import Col from "../components/Col";
 
 const Howtogrow = () => (
   <div>
-    <Hero backgroundImage="../../assets/img/garden.jpg">
-      <h1>Harvest Moon</h1>
+    <Hero backgroundImage="../../assets/img/redLeaf3.jpg">
+      <div id="hmLogo"><img src="../../assets/img/hm_logo4.png"/></div>
       <h2>How To Grow</h2>
     </Hero>
     <Container style={{ marginTop: 30 }}>
       <Row>
-        <Col size="md-12">
+      <Col size="md-2"></Col>
+        <Col size="md-8">
           <h1>Growing with Love!</h1>
         </Col>
       </Row>
       <Row>
-        <Col size="md-12">
+      <Col size="md-2"></Col>
+        <Col size="md-8">
           <p>
           - Public page with information. (Tyler)
           </p>

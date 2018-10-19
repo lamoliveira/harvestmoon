@@ -1,14 +1,25 @@
+
+
+
 .footer {
-  min-height: 100px;
+  min-height: 60px;
   background: #E5E5E5;
   position: relative;
 }
 
 .footer span {
+  min-height: 40px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0px;
   right: 0;
-  padding: 3px;
-  background: #B8B8B8;
+  padding: 5px;
+  background: rgb(114, 80, 54);
+  color: whitesmoke;
 }
+
+/* p.copyright {
+  color: #fff;
+  line-height: 40px;
+  font-size: 0.7em;
+} */
