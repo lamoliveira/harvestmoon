@@ -1,8 +1,9 @@
 .hero {
-  height: 300px;
-  width: max-content;
+  height: 320px;
+  width: 100%;
   background-position: center;
   position: relative;
+  background-repeat: no-repeat;
 }
 
 .hero::after {
@@ -14,7 +15,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: black;
 }
 
 .hero * {
@@ -26,8 +26,17 @@
   color: white;
 }
 
-.hero h1 {
-  font-size: 60px;
-  padding-top: 140px;
+#hmLogo {
+  padding-top: 160px;
   margin-top: 0;
 }
+
+#btFly {
+  height: 320px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* width: 100%; */
+  /* background-position: center; */
+  /* position: relative; */
+}
+
