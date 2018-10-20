@@ -7,8 +7,12 @@ export default {
     return axios.get("https://dog.ceo/api/breeds/image/random");
   },
   getDogsOfBreed: function (breed) {
-    return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
+    console.log("getDogsOfBreed....breed" + breed + "000000000000000000000000000000");
+    return axios.get("https://cors-anywhere.herokuapp.com/food2fork.com/api/search?key=a888b6ad05c0a4dc1ebf5056d5dae5de&q=" + breed);
   },
+  // getDogsOfBreed: function (breed) {
+  //   return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
+  // },
   getBaseBreedsList: function () {
     return axios.get("https://dog.ceo/api/breeds/list");
   }

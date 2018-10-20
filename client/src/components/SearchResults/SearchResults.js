@@ -4,8 +4,8 @@ import "./SearchResults.css";
 const SearchResults = props => (
   <ul className="list-group search-results">
     {props.results.map(result => (
-      <li key={result} className="list-group-item">
-        <img alt="Dog" src={result} className="img-fluid" />
+      <li key={result.image_url} className="list-group-item">
+        <img alt="Recipe" src={result.image_url} className="img-fluid" />
       </li>
     ))}
   </ul>

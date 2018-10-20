@@ -90,6 +90,7 @@ class Books extends Component {
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
+                rows="5"
                 placeholder="Detailed description (Optional)"
               />
               <FormBtn
