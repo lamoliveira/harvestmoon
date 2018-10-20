@@ -14,15 +14,13 @@ import Howtogrow from "./pages/Howtogrow";
 import Howtoshare from "./pages/Howtoshare";
 import Growers from "./pages/Growers";
 import Neighbors from "./pages/Neighbors";
-import Join from "./pages/Join";
-import Login from "./pages/Login";
 import Logout from "./components/Logout";
 import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
-
-
+import Books from "./pages/Books";
+import Products from "./pages/Products";
 
 class App extends Component {
   state = {
@@ -176,7 +174,15 @@ class App extends Component {
 
             <Route exact path="/discover" component={Discover} />
             <Route exact path="/search" component={Search} />
-            
+ 
+             <Route exact path="/products" render={() => {
+              if (!loggedIn) {
+                return <Redirect to="/" />
+              } else {
+                return <Products auth={this.state.auth} />
+              }
+            }
+            } />
             <Route exact path="/logout" render={() => {
               if (!loggedIn) {
                 return <Redirect to="/" />

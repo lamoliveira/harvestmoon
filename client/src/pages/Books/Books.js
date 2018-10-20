@@ -10,17 +10,21 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 class Books extends Component {
   state = {
     books: [],
+    userid: "",
     title: "",
     author: "",
     synopsis: ""
   };
 
   componentDidMount() {
+    this.setState({ userid: this.props.userid })
+    console.log(this.props.userid);
     this.loadBooks();
   }
 
   loadBooks = () => {
-    API.getBooks()
+    console.log("loadbooks: userid: " + this.props.userid);
+    API.getBooks2(this.props.userid)
       .then(res =>
         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
       )
@@ -44,6 +48,7 @@ class Books extends Component {
     event.preventDefault();
     if (this.state.title && this.state.author) {
       API.saveBook({
+        userid: this.state.userid,
         title: this.state.title,
         author: this.state.author,
         synopsis: this.state.synopsis
@@ -59,38 +64,45 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h3>What are you producing?</h3>
             </Jumbotron>
             <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Product (required)"
               />
               <Input
                 value={this.state.author}
                 onChange={this.handleInputChange}
                 name="author"
-                placeholder="Author (required)"
+                placeholder="planted on (month-Optional)"
+              />
+              
+              <Input
+                value={this.state.author}
+                onChange={this.handleInputChange}
+                name="harveston"
+                placeholder="harvest on (month-Optional)"
               />
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
-                placeholder="Synopsis (Optional)"
+                placeholder="Detailed description (Optional)"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Product
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h3>Products On My Lawn</h3>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
@@ -98,7 +110,7 @@ class Books extends Component {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.title} planted on {book.author}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
