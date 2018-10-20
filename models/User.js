@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const User = new Schema({
-	name: String
+	name: String,
+	address: String,
+	Description: String
 	//you may replace this 'name' field with anything you like
 });
 //passport-local-mongoose creates a 'username' and some 'password' fields for you
