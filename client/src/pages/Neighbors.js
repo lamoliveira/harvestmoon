@@ -3,6 +3,10 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
+//import MyMapComponent from "../components/Map";
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import { MapContainer } from "../components/MapContainer/MapContainer";
+
 
 const Growers = () => (
   <div>
@@ -21,21 +25,9 @@ const Growers = () => (
           <p>
           - Products Consumed
           </p>
-          <p>
-          - Name of Product
-          </p>
-          <p>
-          - Quantity consumed
-          </p>
-          <p>
-          - Date consumed
-          </p>
-          <p>
-          - List of products the neighbor wish
-          </p>
-          <p>
-          - Comments: possibility to make a product to share like a pie or jelly
-          </p>
+          <MapContainer 
+            selectedPlace = {{name:"Orlando, FL"}}
+          />
   
         </Col>
       </Row>
