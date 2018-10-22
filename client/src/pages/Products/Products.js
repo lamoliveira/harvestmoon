@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
+import ImageSmall from "../../components/ImageSmall";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -12,6 +13,7 @@ class Products extends Component {
     products: [],
     userid: "",
     product: "",
+    image: "",
     plantedon: "",
     harveston: "",
     description: ""
@@ -27,7 +29,7 @@ class Products extends Component {
     console.log("loadproducts: userid: " + this.props.userid);
     API.getProducts2(this.props.userid)
       .then(res =>
-        this.setState({ products: res.data, product: "", plantedon: "",harveston: "", description: "" })
+        this.setState({ products: res.data, product: "", image: "", plantedon: "",harveston: "", description: "" })
       )
       .catch(err => console.log(err));
   };
@@ -51,6 +53,7 @@ class Products extends Component {
       API.saveProduct({
         userid: this.state.userid,
         product: this.state.product,
+        image: this.state.image,
         plantedon: this.state.plantedon,
         harveston: this.state.harveston,
         description: this.state.description
@@ -74,6 +77,12 @@ class Products extends Component {
                 onChange={this.handleInputChange}
                 name="product"
                 placeholder="Product (required)"
+              />
+              <Input
+                value={this.state.image}
+                onChange={this.handleInputChange}
+                name="image"
+                placeholder="image address "
               />
               <Input
                 value={this.state.plantedon}
@@ -110,7 +119,9 @@ class Products extends Component {
             {this.state.products.length ? (
               <List>
                 {this.state.products.map(product => (
+                  
                   <ListItem key={product._id}>
+                    <ImageSmall name={product.product} src={product.image}> </ImageSmall>
                     <Link to={"/products/" + product._id}>
                       <strong>
                         {product.product} planted on {product.plantedon}
