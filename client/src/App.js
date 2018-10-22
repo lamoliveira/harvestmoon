@@ -19,8 +19,7 @@ import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
-import Books from "./pages/Books";
-import Products from "./pages/Products";
+import ProductsPage from "./pages/ProductsPage";
 
 class App extends Component {
   state = {
@@ -157,9 +156,7 @@ class App extends Component {
 
             <Route exact path="/howtogrow" component={Howtogrow} />
 
-
             <Route exact path="/howtoshare" component={Howtoshare} />
-            <Route exact path="/growersx" component={Growers} />
 
             <Route exact path="/growers" render={() => {
               if (!loggedIn) {
@@ -179,7 +176,7 @@ class App extends Component {
               if (!loggedIn) {
                 return <Redirect to="/" />
               } else {
-                return <Products auth={this.state.auth} />
+                return <ProductsPage auth={this.state.auth} />
               }
             }
             } />

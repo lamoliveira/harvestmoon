@@ -7,33 +7,34 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Books extends Component {
+class Products extends Component {
   state = {
-    books: [],
+    products: [],
     userid: "",
-    title: "",
-    author: "",
-    synopsis: ""
+    product: "",
+    plantedon: "",
+    harveston: "",
+    description: ""
   };
 
   componentDidMount() {
     this.setState({ userid: this.props.userid })
     console.log(this.props.userid);
-    this.loadBooks();
+    this.loadProducts();
   }
 
-  loadBooks = () => {
-    console.log("loadbooks: userid: " + this.props.userid);
-    API.getBooks2(this.props.userid)
+  loadProducts = () => {
+    console.log("loadproducts: userid: " + this.props.userid);
+    API.getProducts2(this.props.userid)
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ products: res.data, product: "", plantedon: "",harveston: "", description: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  deleteProduct = id => {
+    API.deleteProduct(id)
+      .then(res => this.loadProducts())
       .catch(err => console.log(err));
   };
 
@@ -46,14 +47,15 @@ class Books extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
+    if (this.state.product && this.state.plantedon) {
+      API.saveProduct({
         userid: this.state.userid,
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+        product: this.state.product,
+        plantedon: this.state.plantedon,
+        harveston: this.state.harveston,
+        description: this.state.description
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadProducts())
         .catch(err => console.log(err));
     }
   };
@@ -68,33 +70,33 @@ class Books extends Component {
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.product}
                 onChange={this.handleInputChange}
-                name="title"
+                name="product"
                 placeholder="Product (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.plantedon}
                 onChange={this.handleInputChange}
-                name="author"
+                name="plantedon"
                 placeholder="planted on (month-Optional)"
               />
               
               <Input
-                value={this.state.author}
+                value={this.state.harveston}
                 onChange={this.handleInputChange}
                 name="harveston"
                 placeholder="harvest on (month-Optional)"
               />
               <TextArea
-                value={this.state.synopsis}
+                value={this.state.description}
                 onChange={this.handleInputChange}
-                name="synopsis"
+                name="description"
                 rows="5"
                 placeholder="Detailed description (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.product)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Product
@@ -105,16 +107,16 @@ class Books extends Component {
             <Jumbotron>
               <h3>Products On My Lawn</h3>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.products.length ? (
               <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {this.state.products.map(product => (
+                  <ListItem key={product._id}>
+                    <Link to={"/products/" + product._id}>
                       <strong>
-                        {book.title} planted on {book.author}
+                        {product.product} planted on {product.plantedon}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    <DeleteBtn onClick={() => this.deleteProduct(product._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -128,4 +130,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Products;

@@ -1,5 +1,5 @@
 module.exports = {
 	User:require("./User.js"),
-	Book:require("./book")
+	Product:require("./Product.js")
 }
 //add more models as you create them
