@@ -26,26 +26,32 @@ const About = () => (
       </Row>
 
       <Row>
-        <Col size="md-2"></Col>
+        {/* <Col size="md-2"></Col> */}
         <Col size="md-4">
           <p>
-            - Harvest Moon is an App that promotes Urban Growing and Sharing.
+          There is a new movement coming to your neighborhood. One that has an inventive way of changing urban landscapes into providing and supporting communities.
+       If you guessed turning lawns into food gardens, then you are on the right track! Many residential neighborhoods are changing from having a high maintenance lawn
+       to patches of land that turn into colorful vegetable and flower gardens.
         </p>
-          <p>
-            - Helping to Grow the food you eat and share it with your neighbors.
-        </p>
-          <p>
-            - Why not, Turn your Lawn into Fruits and Vegetables. (Herbs and Flowers, also)
-        </p>
+   
         </Col>
         {/* <Col size="md-1"></Col> */}
         <Col size="md-4">
           <p>
-            - Harvest Moon will provide you with the seeds, plants and guidance to plant your own urban garden.
+          Imagine having fresh vegetables in your salad and having an abundance to share with your neighbors or neighborhood food pantries. Imagine the beauty to be observed from your kitchen window as you welcome wildlife
+ into your garden. The countless butterflies and honeybees flitting from flower to flower, the songbirds attracted by the new cover and shade, and just the sunlight shining through those tender green leaves
+ are sure to start your day with grace. 
+          </p>
+          
+        </Col>
+        <Col size="md-4">
+          <p>
+          Changing the urban landscape from hard sharp edges to patches of green beauty and nature will truly benefit us all.
           </p>
           <p>
-            - Once an item in your garden is ready to harvest, our very local network will help you share your fresh produce.
+          Once an item in your garden is ready to harvest, our very local network will help you share your fresh produce.
           </p>
+              
         </Col>
 
       </Row>
