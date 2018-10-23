@@ -1,0 +1,13 @@
+
+form.search button[type="submit"] {
+    background-color: #4aaaa5;
+    color: white;
+    margin: 2px;
+    align-self: baseline;
+  }
+
+  form.search input {
+    margin: 2px;
+    width: 50%;
+  }
+  

@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
+import User from "./components/User";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
@@ -20,11 +21,18 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import ProductsPage from "./pages/ProductsPage";
+import API from "./utils/API";
+
 
 class App extends Component {
   state = {
+    userId: "",
     username: "",
     password: "",
+    nickname: "",
+    image: "",
+    address: "",
+    description: "",
     auth: {
       userId: "",
       username: "",
@@ -40,7 +48,12 @@ class App extends Component {
           userId,
           isAuthenticated,
           username
-        }
+        },
+        image: result.data.image,
+        userId: result.data.userId,
+        nickname: result.data.nickname,
+        address: result.data.address,
+        description: result.data.description
       });
     });
   }
@@ -52,6 +65,32 @@ class App extends Component {
       [name]: value
     });
   }
+  handleUpdate = (event) => {
+    event.preventDefault();
+    const updateUser = {
+      userId: this.state.auth.userId,
+      username: this.state.auth.username,
+      nickname: this.state.nickname,
+      image: this.state.image,
+      address: this.state.address,
+      description: this.state.description
+    };
+    const { name } = event.target;
+    console.log(name);
+    console.log("1111111111111111111111111111111111111");
+    console.log(updateUser);
+    // API.saveUser(updateUser)
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
+    axios.put(name, updateUser).then((data) => {
+      console.log(data);
+      if (data.status === 200) {
+        this.setState({
+          message: "Updated sucessful"
+        });
+      }
+    });
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -59,11 +98,19 @@ class App extends Component {
     //call a sign In function
     const newUser = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      nickname: this.state.nickname,
+      image: this.state.image,
+      address: this.state.address,
+      description: this.state.description
     };
     this.setState({
       username: "",
-      password: ""
+      password: "",
+      nickname: "",
+      image: "",
+      address: "",
+      description: ""
     });
     const { name } = event.target;
     axios.post(name, newUser).then((data) => {
@@ -74,7 +121,13 @@ class App extends Component {
             userId,
             isAuthenticated,
             username
-          }
+          },
+          image: data.data.image,
+          userId: data.data.userId,
+          address: data.data.address,
+          description: data.data.description,
+          nickname: data.data.nickname
+
         });
       }
     });
@@ -82,6 +135,19 @@ class App extends Component {
 
   handleLogout = (event) => {
     event.preventDefault();
+    this.setState({
+      auth: {
+        userId: "",
+        username: "",
+        isAuthenticated: false
+      },
+      username: "",
+      password: "",
+      nickname: "",
+      image: "",
+      address: "",
+      description: ""
+    });
     axios.get("/auth/logout").then((result) => {
       this.setState({
         auth: {
@@ -98,9 +164,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar handleLogout={this.handleLogout} auth={this.state.auth} />
+          <Navbar handleLogout={this.handleLogout} auth={this.state.auth} image={this.state.image} />
           <Wrapper>
-            <Route exact path="/signin" render={() => {
+            <Route exact path="/signup" render={() => {
               if (loggedIn) {
                 return <Redirect to="/growers" />
               } else {
@@ -109,12 +175,28 @@ class App extends Component {
                   handleSubmit={this.handleSubmit}
                   email={this.state.email}
                   password={this.state.password}
+                  nickname={this.state.nickname}
+                  image={this.state.image}
+                  address={this.state.address}
+                  description={this.state.description}
+
                 />
               }
             }} />
-            <Route exact path="/signup" render={() => {
+            <Route exact path="/signin" render={() => {
               if (loggedIn) {
-                return <Redirect to="/Growers" />
+                return <User
+                  handleLogout={this.handleLogout}
+                  userId={this.state.userId}
+                  handleChange={this.handleChange}
+                  handleUpdate={this.handleUpdate}
+                  email={this.state.email}
+                  password={this.state.password}
+                  nickname={this.state.nickname}
+                  image={this.state.image}
+                  address={this.state.address}
+                  description={this.state.description}
+                />
               } else {
                 return <SignUp
                   handleChange={this.handleChange}
@@ -124,7 +206,7 @@ class App extends Component {
                 />
               }
             }} />
-                        <Route exact path="/join" render={() => {
+            <Route exact path="/join" render={() => {
               if (loggedIn) {
                 return <Redirect to="/Growers" />
               } else {
@@ -133,6 +215,10 @@ class App extends Component {
                   handleSubmit={this.handleSubmit}
                   email={this.state.email}
                   password={this.state.password}
+                  nickname={this.state.nickname}
+                  image={this.state.image}
+                  address={this.state.address}
+                  description={this.state.description}
                 />
               }
             }} />
@@ -144,7 +230,7 @@ class App extends Component {
               }
             }
             } />
-                 <Route exact path="/" render={() => {
+            <Route exact path="/" render={() => {
               if (!loggedIn) {
                 return <Redirect to="/about" />
               } else {
@@ -171,8 +257,8 @@ class App extends Component {
 
             <Route exact path="/discover" component={Discover} />
             <Route exact path="/search" component={Search} />
- 
-             <Route exact path="/products" render={() => {
+
+            <Route exact path="/products" render={() => {
               if (!loggedIn) {
                 return <Redirect to="/" />
               } else {
@@ -191,8 +277,18 @@ class App extends Component {
 
             <Route exact path="/login" render={() => {
               if (loggedIn) {
-                return <Logout handleLogout={this.handleLogout} auth={this.state.auth} />
-
+                return <User
+                  handleLogout={this.handleLogout}
+                  auth={this.state.auth}
+                  handleChange={this.handleChange}
+                  handleUpdate={this.handleUpdate}
+                  email={this.state.email}
+                  password={this.state.password}
+                  nickname={this.state.nickname}
+                  image={this.state.image}
+                  address={this.state.address}
+                  description={this.state.description}
+                />
               } else {
                 return <SignIn
                   handleChange={this.handleChange}

@@ -8,7 +8,11 @@ module.exports = function (passport) {
 			res.json({
 				userId: req.user._id,
 				username: req.user.username,
-				isAuthenticated: true
+				isAuthenticated: true,
+				nickname: req.user.nickname,
+				address: req.user.address,
+				description: req.user.description,
+				image: req.user.image
 			});
 			//you can also pass up any other fields you with to expose
 			//for example, 
@@ -27,19 +31,28 @@ module.exports = function (passport) {
 		User.register(newUser,newUser.password,(err,user)=>{
 			if (err){ return res.json(err.message); }
 			res.json({
-				userId: user._id,
-				username: user.username,
-				isAuthenticated: true
+				userId: req.user._id,
+				username: req.user.username,
+				isAuthenticated: true,
+				nickname: req.user.nickname,
+				address: req.user.address,
+				description: req.user.description,
+				image: req.user.image
 			});
 		});
 	});
 
 	router.post("/signin",passport.authenticate('local') ,function(req,res){
-		// console.log(req.user);
+		 console.log(req.user);
+		 console.log(res);
 		res.json({
 			userId: req.user._id,
 			username: req.user.username,
-			isAuthenticated: true
+			isAuthenticated: true,
+			nickname: req.user.nickname,
+			address: req.user.address,
+			description: req.user.description,
+			image: req.user.image
 		});
 	});
 
