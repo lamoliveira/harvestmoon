@@ -1,4 +1,5 @@
 import axios from "axios";
+import { debug } from "util";
 
 // Export an object containing methods we'll use for accessing the Dog.Ceo API
 
@@ -38,6 +39,9 @@ export default {
     return axios.post("/api/products", productData);
   },
 
+  saveUser: function (userData) {
+    return axios.post("/api/users", userData);
+  },
 
   // Gets all tournaments
   getTournaments: function () {

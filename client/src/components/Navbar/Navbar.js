@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import ImageSmall from "../ImageSmall"
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
@@ -135,7 +136,7 @@ const Navbar = props => (
                 : "nav-link"
             }
           >
-            {props.auth.username ? props.auth.username : "Login"
+            {props.auth.username ?  <ImageSmall name={props.auth.username} src={props.image}> </ImageSmall> : "Login"
             }
           </Link>
         </li>
