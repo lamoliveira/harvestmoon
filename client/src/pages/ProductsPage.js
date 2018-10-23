@@ -5,6 +5,7 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import Products from "../../src/pages/Products"
 
+
 const ProductsPage = (props) => (
   <div>
     <Hero backgroundImage="../../assets/img/garden.jpg">

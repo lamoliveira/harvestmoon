@@ -21,11 +21,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import ProductsPage from "./pages/ProductsPage";
-import API from "./utils/API";
-
 
 class App extends Component {
   state = {
+    message: "",
     userId: "",
     username: "",
     password: "",
@@ -57,6 +56,11 @@ class App extends Component {
       });
     });
   }
+  setAlert = (message) => {
+    this.setState({
+      message: message
+    });
+  };
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -68,7 +72,7 @@ class App extends Component {
   handleUpdate = (event) => {
     event.preventDefault();
     const updateUser = {
-      userId: this.state.auth.userId,
+      userid: this.state.auth.userId,
       username: this.state.auth.username,
       nickname: this.state.nickname,
       image: this.state.image,
@@ -82,12 +86,18 @@ class App extends Component {
     // API.saveUser(updateUser)
     //   .then(res => console.log(res))
     //   .catch(err => console.log(err));
+
     axios.put(name, updateUser).then((data) => {
       console.log(data);
+      var method= this.setAlert;
       if (data.status === 200) {
-        this.setState({
-          message: "Updated sucessful"
-        });
+        method("Updated successfully");
+        setInterval(function () { method(""); }, 5000);
+      }
+      else {
+        method("Something went wrong");
+        setInterval(function () { method(""); }, 5000);
+        //@@@ detail messages later
       }
     });
   }
@@ -141,6 +151,7 @@ class App extends Component {
         username: "",
         isAuthenticated: false
       },
+      message: "",
       username: "",
       password: "",
       nickname: "",
@@ -190,6 +201,7 @@ class App extends Component {
                   userId={this.state.userId}
                   handleChange={this.handleChange}
                   handleUpdate={this.handleUpdate}
+                  message={this.state.message}
                   email={this.state.email}
                   password={this.state.password}
                   nickname={this.state.nickname}
@@ -282,6 +294,7 @@ class App extends Component {
                   auth={this.state.auth}
                   handleChange={this.handleChange}
                   handleUpdate={this.handleUpdate}
+                  message={this.state.message}
                   email={this.state.email}
                   password={this.state.password}
                   nickname={this.state.nickname}

@@ -1,6 +1,6 @@
-.img-small {
-    width: 100px;
-    height: 100px;
-    float: right;
+.img-med {
+    width: 200px;
+    height: 200px;
+    float:left;
     margin-right: 5px;
   }
