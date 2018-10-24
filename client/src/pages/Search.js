@@ -13,11 +13,29 @@ class Search extends Component {
     results: [],
     error: ""
   };
-
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
   //  this.setState({ search: "banana" });
-     //API.getBaseBreedsList()
+  this.setState({ results: [{
+    f2f_url: "http://food2fork.com/view/2803",
+    image_url: "http://static.food2fork.com/124030cedd.jpg",
+    publisher: "All Recipes",
+    publisher_url: "http://allrecipes.com",
+    recipe_id: "2803",
+    social_rank: 100,
+    source_url: "http://allrecipes.com/Recipe/Banana-Crumb-Muffins/Detail.aspx",
+    title: "Banana Crumb Muffins"},
+    {
+    f2f_url: "http://food2fork.com/view/47692",
+    image_url: "http://static.food2fork.com/healthy_cookies4ee3.jpg",
+    publisher: "101 Cookbooks",
+    publisher_url: "http://www.101cookbooks.com",
+    recipe_id: "47692",
+    social_rank: 100,
+    source_url: "http://www.101cookbooks.com/archives/nikkis-healthy-cookies-recipe.html",
+    title: "Nikki"}
+    ]});
+  //API.getBaseBreedsList()
       // .then(res => console.log(res.data.message))
 //       .then(res => this.setState({ breeds: res.data.message }))
       // .catch(err => console.log(err));
@@ -31,15 +49,15 @@ class Search extends Component {
   };
 
   handleFormSubmitDefault = event => {
-     //event.preventDefault();
-     //this.setState({ search: event.target.value });
-     //this.handleFormSubmit();
+     event.preventDefault();
+     this.setState({ search: event.target.value });
+     this.handleFormSubmit();
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("handleformsubmit*********************************");
-    API.getDogsOfBreed("banana")
+    
+    API.getRecipes(this.state.search)
       //this.state.search
       .then(res => {
         if (res.data.status === "error") {
@@ -75,3 +93,4 @@ class Search extends Component {
 }
 
 export default Search;
+
