@@ -4,8 +4,8 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 //import MyMapComponent from "../components/Map";
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import { MapContainer } from "../components/MapContainer/MapContainer";
+//import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+//import { MapContainer } from "../components/MapContainer/MapContainer";
 
 
 const Growers = () => (
@@ -25,9 +25,6 @@ const Growers = () => (
           <p>
           - Products Consumed
           </p>
-          <MapContainer 
-            selectedPlace = {{name:"Orlando, FL"}}
-          />
   
         </Col>
       </Row>
