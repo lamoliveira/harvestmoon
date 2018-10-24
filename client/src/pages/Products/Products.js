@@ -27,7 +27,7 @@ class Products extends Component {
 
   loadProducts = () => {
     console.log("loadproducts: userid: " + this.props.userid);
-    API.getProducts2(this.props.userid)
+    API.getProductsbyuser(this.props.userid)
       .then(res =>
         this.setState({ products: res.data, product: "", image: "", plantedon: "",harveston: "", description: "" })
       )
