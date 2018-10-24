@@ -8,7 +8,7 @@ import Products from "../../src/pages/Products"
 
 const ProductsPage = (props) => (
   <div>
-    <Hero backgroundImage="../../assets/img/garden.jpg">
+    <Hero customClass='smallHero' backgroundImage="../../assets/img/garden.jpg">
       <h1>Harvest Moon</h1>
       <h2>Products page</h2>
     </Hero>
