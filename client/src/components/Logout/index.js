@@ -7,7 +7,6 @@ import { Col, Row, Container } from "../../components/Grid";
 const Logout = (props) => {
 	return (
 		<div>
-			<h3>Logout here!</h3>
 			<Container fluid>
 				<Row>
 					<Col size="lg-4 md-4 sm-12 12">
@@ -17,6 +16,7 @@ const Logout = (props) => {
 						</div>
 					</Col>
 					<Col size="lg-4 md-4 sm-12 12">
+			<h3 >Logout here! </h3>
 						<p>{props.auth.username}</p>
 						<br></br>
 						<button onClick={props.handleLogout}>Log Out</button>

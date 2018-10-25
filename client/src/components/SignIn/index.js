@@ -6,7 +6,6 @@ import ImageMed from "../../components/ImageMed";
 const SignIn = (props) => {
 	return (
 		<div>
-			<h3 class_name="text-center">Join</h3>
 			<Container fluid >
 				<Row>
 					
@@ -16,6 +15,7 @@ const SignIn = (props) => {
 						</div>
 				</Col>
 					<Col size="lg-4 md-4 sm-12 12">
+			<h3 >Login</h3>
 						<form>
 							<label>Email</label><br />
 							<input value={props.username} onChange={props.handleChange} name='username' type='email' placeholder='example@email.com' />
