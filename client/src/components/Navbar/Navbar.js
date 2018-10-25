@@ -75,7 +75,20 @@ const Navbar = props => (
             :"" }
           </li>
           
-
+          <li className="nav-item">
+          {props.auth.username ?
+            <Link
+              to="/discoverneighbors"
+              className={
+                window.location.pathname === "/discoverneighbors"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              {props.auth.username ? "Neighbors" : ""}
+            </Link>
+                        :"" }
+          </li>
 
           <li className="nav-item">
           {props.auth.username ?

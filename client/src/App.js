@@ -10,6 +10,7 @@ import Home from "./components/Home";
 
 //adding new routes
 import Discover from "./pages/Discover";
+import DiscoverNeighbors from "./pages/DiscoverNeighbors";
 import About from "./pages/About";
 import Howtogrow from "./pages/Howtogrow";
 import Howtoshare from "./pages/Howtoshare";
@@ -32,6 +33,7 @@ class App extends Component {
     image: "",
     address: "",
     description: "",
+    type: "",
     auth: {
       userId: "",
       username: "",
@@ -52,7 +54,8 @@ class App extends Component {
         userId: result.data.userId,
         nickname: result.data.nickname,
         address: result.data.address,
-        description: result.data.description
+        description: result.data.description,
+        type: result.data.type
       });
     });
   }
@@ -77,7 +80,8 @@ class App extends Component {
       nickname: this.state.nickname,
       image: this.state.image,
       address: this.state.address,
-      description: this.state.description
+      description: this.state.description,
+      type: this.state.type
     };
     const { name } = event.target;
 
@@ -106,7 +110,8 @@ class App extends Component {
       nickname: this.state.nickname,
       image: this.state.image,
       address: this.state.address,
-      description: this.state.description
+      description: this.state.description,
+      type: this.state.type
     };
     this.setState({
       username: "",
@@ -114,7 +119,8 @@ class App extends Component {
       nickname: "",
       image: "",
       address: "",
-      description: ""
+      description: "",
+      type: ""
     });
     const { name } = event.target;
     axios.post(name, newUser).then((data) => {
@@ -130,8 +136,8 @@ class App extends Component {
           userId: data.data.userId,
           address: data.data.address,
           description: data.data.description,
-          nickname: data.data.nickname
-
+          nickname: data.data.nickname,
+          type: data.data.type
         });
       }
     });
@@ -151,7 +157,8 @@ class App extends Component {
       nickname: "",
       image: "",
       address: "",
-      description: ""
+      description: "",
+      type: ""
     });
     axios.get("/auth/logout").then((result) => {
       this.setState({
@@ -184,6 +191,7 @@ class App extends Component {
                   image={this.state.image}
                   address={this.state.address}
                   description={this.state.description}
+                  type={this.state.type}
 
                 />
               }
@@ -202,6 +210,7 @@ class App extends Component {
                   image={this.state.image}
                   address={this.state.address}
                   description={this.state.description}
+                  type={this.state.type}
                 />
               } else {
                 return <SignUp
@@ -225,6 +234,7 @@ class App extends Component {
                   image={this.state.image}
                   address={this.state.address}
                   description={this.state.description}
+                  type={this.state.type}
                 />
               }
             }} />
@@ -262,6 +272,8 @@ class App extends Component {
             <Route exact path="/neighbors" component={Neighbors} />
 
             <Route exact path="/discover" component={Discover} />
+            <Route exact path="/discoverneighbors" component={DiscoverNeighbors} />
+            
             <Route exact path="/search" component={Search} />
 
             <Route exact path="/products" render={() => {
@@ -295,6 +307,7 @@ class App extends Component {
                   image={this.state.image}
                   address={this.state.address}
                   description={this.state.description}
+                  type={this.state.type}
                 />
               } else {
                 return <SignIn

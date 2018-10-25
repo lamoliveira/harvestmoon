@@ -7,3 +7,6 @@ form.search .message{
 form input{
     width:80%;
  }
+ form .custom-select{
+    width:80%;
+ }
