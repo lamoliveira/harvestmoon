@@ -31,7 +31,7 @@ const About = () => (
           <p>There is a new movement coming to your neighborhood. It's an inventive way to transform urban landscapes into fresh food for the community.
            </p>
           <p>
-            Many residential neighborhoods are changing from having a high maintenance lawns into colorful vegetable and flower gardens.
+            Many residential neighborhoods are changing from having a high maintenance lawn into a colorful vegetable and flower garden.
           </p>
 
         </Col>
@@ -41,14 +41,14 @@ const About = () => (
             Imagine the beauty to be observed from your kitchen window as you welcome wildlife into your garden.
            </p>
           <p>
-            Enjoy the beauty of butterflies and honeybees flitting from flower to flower. Just the sunlight shining through tender green leaves
-            is sure to start your day with grace.
+            Enjoy the beauty of butterflies and honeybees flitting from flower to flower. Delight in the sunlight shining through tender green leaves.
+            It is sure to start your day with grace.
           </p>
 
         </Col>
         <Col size="md-4">
           <p>
-            Wouldn't it be nice to have fresh vegetables in your salad and an abundance to share with your neighbors.
+            Wouldn't it be nice to have fresh vegetables in your salad and an abundance to share with your neighbors?
           </p>
           <p>
             Changing the urban landscape from hard sharp edges to patches of green beauty and nature will truly benefit us all.
@@ -93,10 +93,12 @@ const About = () => (
           <p>
             GROW
       </p>
+       
           <p>
             Providing seeds, plants and guidance to urban gardeners.
       </p>
         </Col>
+
 
         <Col size="md-3">
           <div><img src="../../assets/img/pink-donate.png" /> </div>
@@ -160,8 +162,9 @@ const About = () => (
 
     <Container style={{ marginTop: 120 }}>
       <Row>
-        <Col size="md-3">
-          <div><img src="../../assets/img/facebook.png" /> </div>
+  
+        <Col size="md-3">       
+          <div id="facebook"><img src="../../assets/img/facebook.png"/> </div>
           <br></br>
           <p>
           FACEBOOK
