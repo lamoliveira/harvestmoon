@@ -10,12 +10,12 @@ const SearchResults = props => (
       <li key={result.image_url} className="list-group-item">
            <Container fluid>
         <Row>
-          <Col size="lg-4 md-4 sm-6 6">
+          <Col size="lg-4 md-4 sm-12 12">
         <div className="recipe">
         <ImageMed alt="Recipe" src={result.image_url} className="img-fluid" />
         </div>
         </Col>
-        <Col size="lg-8 md-8 sm-6 6">
+        <Col size="lg-8 md-8 sm-12 12">
         <div className="recipedetail">
         <p><strong>Recipe:</strong><a href= {result.f2f_url}> {result.title} </a></p>
         <p><strong>Recipe Original:</strong><a href= {result.source_url}> {result.title} </a></p>
