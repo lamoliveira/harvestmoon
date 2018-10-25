@@ -44,42 +44,8 @@ const Navbar = props => (
               Share
           </Link>
           </li>
-          <li className="nav-item">
-            {props.auth.username ? <Link
-              to="/growers"
-              className={
-                window.location.pathname === "/growers"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            > growers
-          </Link>
-              : ""}
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/neighbors"
-              className={
-                window.location.pathname === "/neighbors"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Neighbors
-          </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/discover"
-              className={
-                window.location.pathname === "/discover"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              WishList
-          </Link>
-          </li>
+          
+
           <li className="nav-item">
             <Link
               to="/search"
@@ -93,7 +59,9 @@ const Navbar = props => (
           </Link>
           </li>
 
+          
           <li className="nav-item">
+          {props.auth.username ?
             <Link
               to="/products"
               className={
@@ -102,23 +70,32 @@ const Navbar = props => (
                   : "nav-link"
               }
             >
-              {props.auth.username ? "Products" : ""}
+              {props.auth.username ? "Growers" : ""}
             </Link>
+            :"" }
           </li>
+          
+
+
           <li className="nav-item">
+          {props.auth.username ?
             <Link
-              to="/join"
+              to="/discover"
               className={
-                window.location.pathname === "/join"
+                window.location.pathname === "/discover"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
-              {props.auth.username ? "" : "Join"}
+              {props.auth.username ? "Matching" : ""}
             </Link>
+                        :"" }
           </li>
 
+
+
           <li className="nav-item">
+          {props.auth.username ?
             <Link
               to="/logout"
               className={
@@ -130,6 +107,7 @@ const Navbar = props => (
               {props.auth.username ? "Logout" : ""
               }
             </Link>
+            :"" }
 
           </li>
 
