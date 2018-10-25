@@ -82,7 +82,7 @@ class Search extends Component {
         </Hero>
 
         <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Search recipes By Products!</h1>
+          <h3 className="text-center">Search recipes By Products!</h3>
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}

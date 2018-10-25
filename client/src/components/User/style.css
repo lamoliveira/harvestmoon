@@ -3,3 +3,7 @@ form.search .message{
    margin-left: 20px;
    color: green;
 }
+
+form input{
+    width:80%;
+ }

@@ -81,15 +81,15 @@ class Discover extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-center">Tell Growers the products you like or Cook and see if you are selected</h1>
-        <h3 className="text-center">
+        <h3 className="text-center">Tell Growers the products you like or cook and see if it matches</h3>
+        <h4 className="text-center">
           Thumbs up on any product you'd like to eat or cook!
-        </h3>
+        </h4>
         <h4 className="text-center">{this.state.productName}</h4>
         <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
-        <h1 className="text-center">
+        <h3 className="text-center">
           Match with {this.state.matchCount} Growers so far!
-        </h1>
+        </h3>
         <Alert style={{ opacity: this.state.match ? 1 : 0 }} type="success">
           Yay! Your neighbor harvest this product!!!
         </Alert>

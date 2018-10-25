@@ -17,6 +17,7 @@ const SearchResults = props => (
         </Col>
         <Col size="lg-8 md-8 sm-12 12">
         <div className="recipedetail">
+        <br/>
         <p><strong>Recipe:</strong><a href= {result.f2f_url}> {result.title} </a></p>
         <p><strong>Recipe Original:</strong><a href= {result.source_url}> {result.title} </a></p>
         <p> <strong>Publisher:</strong> <a href= {result.publisher_url}> {result.publisher} </a></p>        
