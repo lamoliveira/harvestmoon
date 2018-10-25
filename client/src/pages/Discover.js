@@ -78,15 +78,6 @@ class Discover extends Component {
     console.log("product:"+ this.state.products[newIndex].product);
   }
 
-  //   API.getRandomDog()
-  //     .then(res =>
-  //       this.setState({
-  //         image: res.data.message
-  //       })
-  //     )
-  //     .catch(err => console.log(err));
-  // };
-
   render() {
     return (
       <div>
