@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import Alert from "../components/Alert";
+import Hero from "../components/Hero";
 
 
 class Search extends Component {
@@ -13,33 +14,55 @@ class Search extends Component {
     results: [],
     error: ""
   };
-
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-  //  this.setState({ search: "banana" });
-     //API.getBaseBreedsList()
-      // .then(res => console.log(res.data.message))
-//       .then(res => this.setState({ breeds: res.data.message }))
-      // .catch(err => console.log(err));
+    //  this.setState({ search: "banana" });
+    this.setState({
+      results: [{
+        f2f_url: "http://food2fork.com/view/2803",
+        image_url: "http://static.food2fork.com/124030cedd.jpg",
+        publisher: "All Recipes",
+        publisher_url: "http://allrecipes.com",
+        recipe_id: "2803",
+        social_rank: 100,
+        source_url: "http://allrecipes.com/Recipe/Banana-Crumb-Muffins/Detail.aspx",
+        title: "Banana Crumb Muffins"
+      },
+      {
+        f2f_url: "http://food2fork.com/view/47692",
+        image_url: "http://static.food2fork.com/healthy_cookies4ee3.jpg",
+        publisher: "101 Cookbooks",
+        publisher_url: "http://www.101cookbooks.com",
+        recipe_id: "47692",
+        social_rank: 100,
+        source_url: "http://www.101cookbooks.com/archives/nikkis-healthy-cookies-recipe.html",
+        title: "Nikki"
+      }
+      ]
+    });
+    //API.getBaseBreedsList()
+    // .then(res => console.log(res.data.message))
+    //       .then(res => this.setState({ breeds: res.data.message }))
+    // .catch(err => console.log(err));
 
-       //this.handleFormSubmit();
-       
-   }
+    //this.handleFormSubmit();
+
+  }
 
   handleInputChange = event => {
     this.setState({ search: event.target.value });
   };
 
   handleFormSubmitDefault = event => {
-     //event.preventDefault();
-     //this.setState({ search: event.target.value });
-     //this.handleFormSubmit();
+    event.preventDefault();
+    this.setState({ search: event.target.value });
+    this.handleFormSubmit();
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("handleformsubmit*********************************");
-    API.getDogsOfBreed("banana")
+
+    API.getRecipes(this.state.search)
       //this.state.search
       .then(res => {
         if (res.data.status === "error") {
@@ -47,13 +70,17 @@ class Search extends Component {
         }
         console.log(res.data.recipes);
         this.setState({ results: res.data.recipes, error: "" });
-        
+
       })
       .catch(err => this.setState({ error: err.message }));
   };
   render() {
     return (
       <div>
+        <Hero customClass='smallHero' backgroundImage="../../assets/img/garden.jpg">
+          <h1>Harvest Moon</h1>
+        </Hero>
+
         <Container style={{ minHeight: "80%" }}>
           <h1 className="text-center">Search recipes By Products!</h1>
           <Alert
@@ -75,3 +102,4 @@ class Search extends Component {
 }
 
 export default Search;
+

@@ -80,15 +80,9 @@ class App extends Component {
       description: this.state.description
     };
     const { name } = event.target;
-    console.log(name);
-    console.log("1111111111111111111111111111111111111");
-    console.log(updateUser);
-    // API.saveUser(updateUser)
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err));
 
     axios.put(name, updateUser).then((data) => {
-      console.log(data);
+      //console.log(data);
       var method= this.setAlert;
       if (data.status === 200) {
         method("Updated successfully");

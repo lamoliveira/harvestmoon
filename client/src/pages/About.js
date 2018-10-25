@@ -126,7 +126,8 @@ const About = () => (
       </p>
           <p>
             Gain access to our gardener's database and our hyper local network.
-      </p>
+      </p> 
+  
         </Col>
       </Row>
 
