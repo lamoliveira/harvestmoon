@@ -28,30 +28,32 @@ const About = () => (
       <Row>
         {/* <Col size="md-2"></Col> */}
         <Col size="md-4">
+          <p>There is a new movement coming to your neighborhood. It's an inventive way to transform urban landscapes into fresh food for the community.
+           </p>
           <p>
-          There is a new movement coming to your neighborhood. One that has an inventive way of changing urban landscapes into providing and supporting communities.
-       If you guessed turning lawns into food gardens, then you are on the right track! Many residential neighborhoods are changing from having a high maintenance lawn
-       to patches of land that turn into colorful vegetable and flower gardens.
-        </p>
-   
+            Many residential neighborhoods are changing from having a high maintenance lawns into colorful vegetable and flower gardens.
+          </p>
+
         </Col>
         {/* <Col size="md-1"></Col> */}
         <Col size="md-4">
           <p>
-          Imagine having fresh vegetables in your salad and having an abundance to share with your neighbors or neighborhood food pantries. Imagine the beauty to be observed from your kitchen window as you welcome wildlife
- into your garden. The countless butterflies and honeybees flitting from flower to flower, the songbirds attracted by the new cover and shade, and just the sunlight shining through those tender green leaves
- are sure to start your day with grace. 
+            Imagine the beauty to be observed from your kitchen window as you welcome wildlife into your garden.
+           </p>
+          <p>
+            Enjoy the beauty of butterflies and honeybees flitting from flower to flower. Just the sunlight shining through tender green leaves
+            is sure to start your day with grace.
           </p>
-          
+
         </Col>
         <Col size="md-4">
           <p>
-          Changing the urban landscape from hard sharp edges to patches of green beauty and nature will truly benefit us all.
+            Wouldn't it be nice to have fresh vegetables in your salad and an abundance to share with your neighbors.
           </p>
           <p>
-          Once an item in your garden is ready to harvest, our very local network will help you share your fresh produce.
+            Changing the urban landscape from hard sharp edges to patches of green beauty and nature will truly benefit us all.
           </p>
-              
+
         </Col>
 
       </Row>
@@ -83,21 +85,49 @@ const About = () => (
     </Hero>
 
 
-    <Container style={{ marginTop: 120 }}>
+    <Container style={{ marginTop: 90 }}>
       <Row>
-        <Col size="md-4">
-          <div><img src="../../assets/img/sunflower2.jpg" /> </div>
-        </Col>
-        <Col size="md-4">
+        <Col size="md-3">
+          <div><img src="../../assets/img/purple-install.png" /> </div>
+          <br></br>
           <p>
-            - Harvest Moon will provide you with the seeds, plants and guidance to plant your own urban garden.
+            GROW
       </p>
           <p>
-            - Once an item in your garden is ready to harvest, our very local network will help you share the fresh produce.
+            Providing seeds, plants and guidance to urban gardeners.
       </p>
         </Col>
-        <Col size="md-4">
-          <div><img src="../../assets/img/hibiscusSmall.jpg" /> </div>
+
+        <Col size="md-3">
+          <div><img src="../../assets/img/pink-donate.png" /> </div>
+          <br></br>
+          <p>
+            SHARE
+      </p>
+          <p>
+            Let our very local network help you share the fresh produce.
+      </p>
+        </Col>
+        <Col size="md-3">
+          <div><img src="../../assets/img/kitchen-utensils.png" /> </div>
+          <br></br>
+          <p>
+            COOK
+      </p>
+          <p>
+            Are you wondering how to prepare the harvest?  Try our Recipe Finder.
+      </p>
+        </Col>
+        <Col size="md-3">
+          <div><img src="../../assets/img/icon-hands.png" /> </div>
+          <br></br>
+          <p>
+            JOIN
+      </p>
+          <p>
+            Gain access to our gardener's database and our hyper local network.
+      </p> 
+  
         </Col>
       </Row>
 
@@ -109,24 +139,9 @@ const About = () => (
           <br></br>
         </Col>
       </Row>
-      <Row>
-        <Col size="md-4">
-          <div><img src="../../assets/img/gardenMix.jpg" /> </div>
-        </Col>
-        <Col size="md-4">
-          <p>
-            - Harvest Moon will provide you with the seeds, plants and guidance to plant your own urban garden.
-      </p>
-          <p>
-            - Once an item in your garden is ready to harvest, our very local network will help you share the fresh produce.
-      </p>
-        </Col>
-        <Col size="md-4">
-          <div><img src="../../assets/img/sunflower2.jpg" /> </div>
-        </Col>
-      </Row>
 
-      <Row>
+
+      {/* <Row>
         <Col size="md-2"></Col>
         <Col size="md-8">
           <p></p>
@@ -135,16 +150,60 @@ const About = () => (
           <br></br>
           <br></br>
         </Col>
-      </Row>
+      </Row> */}
     </Container>
 
 
-    <Hero backgroundImage="../../assets/img/hibiscus4.jpg" >
+    <Hero backgroundImage="../../assets/img/lettuce3.jpg" >
       <div id="btFly"><img src="../../assets/img/ezgif.com-crop.gif" /></div>
     </Hero>
 
     <Container style={{ marginTop: 120 }}>
       <Row>
+        <Col size="md-3">
+          <div><img src="../../assets/img/facebook.png" /> </div>
+          <br></br>
+          <p>
+          FACEBOOK
+      </p>
+
+        </Col>
+
+        <Col size="md-3">
+          <div><img src="../../assets/img/instagram.png" /> </div>
+          <br></br>
+          <p>
+          INSTAGRAM
+      </p>
+
+        </Col>
+        <Col size="md-3">
+          <div><img src="../../assets/img/youtube.png" /> </div>
+          <br></br>
+          <p>
+          YOUTUBE
+      </p>
+
+        </Col>
+        <Col size="md-3">
+          <div><img src="../../assets/img/Octocat.png" /> </div>
+          <br></br>
+          <p>
+          GITHUB
+      </p>
+
+        </Col>
+      </Row>
+
+      <Row>
+        <Col size="md-2"></Col>
+        <Col size="md-8">
+          <p></p>
+          <br></br>
+          <br></br>
+        </Col>
+      </Row>
+      {/* <Row>
         <Col size="md-4">
           <div><img src="../../assets/img/sunflower2.jpg" /> </div>
         </Col>
@@ -177,7 +236,7 @@ const About = () => (
           <p>
             - Once an item in your garden is ready to harvest, our very local network will help you share the fresh produce.
       </p>
-        </Col>        
+        </Col>
         <Col size="md-4">
           <div><img src="../../assets/img/hibiscusSmall.jpg" /> </div>
         </Col>
@@ -188,7 +247,7 @@ const About = () => (
           <p>
             - Once an item in your garden is ready to harvest, our very local network will help you share the fresh produce.
       </p>
-        </Col> 
+        </Col>
       </Row>
 
       <Row>
@@ -200,7 +259,7 @@ const About = () => (
           <br></br>
           <br></br>
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   </div>
 );
