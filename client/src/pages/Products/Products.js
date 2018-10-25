@@ -69,7 +69,7 @@ class Products extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h3>What are you producing?</h3>
+              <h5>What are you producing?</h5>
             </Jumbotron>
             <form>
               <Input
@@ -114,7 +114,7 @@ class Products extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h3>Products On My Lawn</h3>
+              <h5>Products On My Lawn</h5>
             </Jumbotron>
             {this.state.products.length ? (
               <List>
@@ -132,7 +132,7 @@ class Products extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h5>No Results to Display</h5>
             )}
           </Col>
         </Row>
