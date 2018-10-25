@@ -97,7 +97,7 @@ const About = () => (
       </p>
         </Col>
         <Col size="md-4">
-          <div><img src="../../assets/img/gardenMix.jpg" /> </div>
+          <div><img src="../../assets/img/hibiscusSmall.jpg" /> </div>
         </Col>
       </Row>
 

@@ -11,7 +11,7 @@ const SearchForm = props => (
         onChange={props.handleInputChange}
         type="text"
         className="form-control"
-        placeholder="Type in a product name to begin"
+        placeholder="Type in a product name to begin. Ex:Banana"
         id="breed"
       
       />
