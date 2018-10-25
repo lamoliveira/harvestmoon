@@ -40,6 +40,13 @@ const SignUp = (props) => {
 							<label>About you</label><br />
 							<input name='description' value={props.description} onChange={props.handleChange} placeholder='Add a short bio to tell people more about yourself.' />
 							<br />
+							<label>Grower or just a Neighbor?</label><br />
+							<select className="custom-select" value={props.type} name="type" defaultValue="Neighbor" onChange={props.handleChange}>
+								<option value="Neighbor">Neighbor</option>
+								<option value="Grower">Grower</option>
+							</select>
+							<br />
+							<br></br>
 
 							<button className='signin-btn' type='submit' name="/auth/signup" onClick={props.handleSubmit}>Sign Up</button>
 							<Alert style={{ opacity: props.message ? 1 : 0 }} type="success">
