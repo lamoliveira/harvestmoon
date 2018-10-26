@@ -3,7 +3,7 @@ import "./style.css";
 import ImageMed from "../ImageMed";
 import Alert from '../Alert';
 import { Col, Row, Container } from "../../components/Grid";
-
+import Hero from "../../components/Hero";
 //user profile 
 
 const btnStyle = {
@@ -14,8 +14,20 @@ const btnStyle = {
 const User = (props) => {
 	return (
 		<div>
-			<h3>Profile</h3>
-			<Container fluid>
+
+			<Hero backgroundImage="../../assets/img/malabar.jpg">
+				<div id="hmLogo" className="animated rubberBand delay-3s"><img src="../../assets/img/hm_logo4.png" />
+					<h2>Orlando</h2>
+				</div>
+			</Hero>
+
+			<Container style={{ marginTop: 30 }}>
+				<Row>
+					<Col size="md-12">
+						<h1 className="text-center">Profile</h1>
+					</Col>
+				</Row>
+
 				<Row>
 					<Col size="lg-4 md-4 sm-12 12">
 
@@ -54,6 +66,13 @@ const User = (props) => {
 								{props.message}
 							</Alert>
 						</form>
+					</Col>
+				</Row>
+				<Row>
+					<Col size="md-12">
+						<br></br>
+						<br></br>
+						<br></br>
 					</Col>
 				</Row>
 			</Container>

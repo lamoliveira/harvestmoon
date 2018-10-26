@@ -5,6 +5,8 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import Alert from "../components/Alert";
 import Hero from "../components/Hero";
+import Row from "../components/Row";
+import Col from "../components/Col";
 
 
 class Search extends Component {
@@ -77,24 +79,55 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Hero customClass='smallHero' backgroundImage="../../assets/img/garden.jpg">
-          <h1>Harvest Moon</h1>
+			<Hero backgroundImage="../../assets/img/crispyLeaf.jpg">
+          <div id="hmLogo" className="animated jello delay-3s"><img src="../../assets/img/hm_logo4.png" />
+            <h2>Orlando</h2>
+          </div>
         </Hero>
 
-        <Container style={{ minHeight: "80%" }}>
-          <h3 className="text-center">Search recipes By Products!</h3>
-          <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-          >
-            {this.state.error}
-          </Alert>
-          <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            breeds={this.state.breeds}
-          />
-          <SearchResults results={this.state.results} />
+        {/* <Hero customClass='smallHero' backgroundImage="../../assets/img/garden.jpg">
+          <h1>Harvest Moon</h1>
+        </Hero> */}
+
+        <Container style={{ marginTop: 30 }}>
+          <Row>
+            <Col size="md-12">
+              <h1 className="text-center">Search Recipes By Products!</h1>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col size="md-12">
+              <Alert
+                type="danger"
+                style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+              >
+                {this.state.error}
+              </Alert>
+              <SearchForm
+                handleFormSubmit={this.handleFormSubmit}
+                handleInputChange={this.handleInputChange}
+                breeds={this.state.breeds}
+              />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col size="md-12">
+
+              <SearchResults results={this.state.results} />
+            </Col>
+          </Row>
+
+          <Row>
+            <Col size="md-12">
+              <p></p>
+              <br></br>
+              <br></br>
+              <br></br>
+            </Col>
+          </Row>
+
         </Container>
       </div>
     );

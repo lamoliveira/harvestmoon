@@ -10,19 +10,19 @@ import Card from "../components/Card";
 const About = () => (
   <div>
     <Hero backgroundImage="../../assets/img/lettuce3.jpg">
-      <div id="hmLogo"><img src="../../assets/img/hm_logo4.png" /></div>
+      <div id="hmLogo" className="animated tada delay-3s"><img src="../../assets/img/hm_logo4.png" />
+      <br></br>
       <h2>Orlando</h2>
+      </div>
     </Hero>
 
     <Container style={{ marginTop: 70 }}>
       <Row>
-        <Col size="md-3"></Col>
-        <Col size="md-9">
-          <h1>Changing the Urban Landscape</h1>
+        <Col size="md-12">
+          <h1 className="text-center">Changing the Urban Landscape</h1>
           <br></br>
           <br></br>
         </Col>
-        <Col size="md-1"></Col>
       </Row>
 
       <Row>
@@ -70,9 +70,8 @@ const About = () => (
       </Row>
 
       <Row>
-        <Col size="md-2"></Col>
-        <Col size="md-8">
-          <p></p>
+        <Col size="md-12">
+          <br></br>
           <br></br>
           <br></br>
         </Col>
@@ -180,7 +179,7 @@ const About = () => (
       <Row>
 
         <Col size="md-3">
-          <div className="text-center"> 
+          <div className="text-center animated pulse"> 
             <a href="https://www.facebook.com/harvestmoonorlando" target="_blank"><img src="../../assets/img/facebook.png" /></a>
             {/* <a href="https://www.facebook.com/harvestmoonorlando" /> */}
             {/* <br></br> */}

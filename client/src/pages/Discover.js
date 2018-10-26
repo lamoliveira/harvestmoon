@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Card from "../components/Card";
 import Alert from "../components/Alert";
+import Hero from "../components/Hero";
+import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
 
 class Discover extends Component {
   state = {
@@ -36,7 +40,7 @@ class Discover extends Component {
   }
 
   handleBtnClick = event => {
-   event.preventDefault();
+    event.preventDefault();
     // Get the data-value of the clicked button
     const btnType = event.target.attributes.getNamedItem("data-value").value;
     // Clone this.state to the newState object
@@ -59,40 +63,71 @@ class Discover extends Component {
   };
 
   loadNextProduct = () => {
-    console.log("loadnext thisindex"+this.state.index);
+    console.log("loadnext thisindex" + this.state.index);
     let newIndex = parseInt(this.state.index) + 1;
     console.log("newindex:" + newIndex);
-    console.log("length"+ this.state.length );
-    if (this.state.index === (parseInt(this.state.length) - 1)) {newIndex= 0; console.log("index=0");   }
+    console.log("length" + this.state.length);
+    if (this.state.index === (parseInt(this.state.length) - 1)) { newIndex = 0; console.log("index=0"); }
     console.log(this.state.products[newIndex].image);
     while (!this.state.products[newIndex].image) {
-        newIndex= newIndex+ 1;
+      newIndex = newIndex + 1;
       if (newIndex >= this.state.length - 1) {
-        newIndex= 0;
+        newIndex = 0;
         console.log("index=0");
-        };}
-          this.setState({
-            image: this.state.products[newIndex].image,
-            productName: this.state.products[newIndex].product,
-            index: newIndex  });
-    console.log("product:"+ this.state.products[newIndex].product);
+      };
+    }
+    this.setState({
+      image: this.state.products[newIndex].image,
+      productName: this.state.products[newIndex].product,
+      index: newIndex
+    });
+    console.log("product:" + this.state.products[newIndex].product);
   }
 
   render() {
     return (
       <div>
-        <h5 className="text-center">Tell Growers the products you like or cook and see if it matches</h5>
-        <h5 className="text-center">
-          Thumbs up on any product you'd like to eat or cook!
-        </h5>
-        <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
-        <h5 className="text-center">{this.state.productName}</h5>
-        <h5 className="text-center">
-          Match with {this.state.matchCount} neighbors so far!
-        </h5>
-        <Alert style={{ opacity: this.state.match ? 1 : 0 }} type="success">
-          Yay! You match a neighbor! Soon you will be able to chat!
-        </Alert>
+        <Hero backgroundImage="../../assets/img/spinach4.jpg">
+          <div id="hmLogo" className="animated tada delay-3s"><img src="../../assets/img/hm_logo4.png" />
+            <h2>Orlando</h2>
+          </div>
+        </Hero>
+
+        <Container style={{ marginTop: 30 }}>
+          <Row>
+            <Col size="md-12">
+              <h5 className="text-center">Tell Growers the products you like or cook and see if it matches</h5>
+              <h5 className="text-center">
+                Thumbs up on any product you'd like to eat or cook!
+              </h5>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col size="md-12">
+              <Card image={this.state.image} handleBtnClick={this.handleBtnClick} />
+              <h5 className="text-center">{this.state.productName}</h5>
+              <h5 className="text-center">
+                Match with {this.state.matchCount} neighbors so far!
+              </h5>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col size="md-12">
+              <Alert style={{ opacity: this.state.match ? 1 : 0 }} type="success">
+                Yay! You match a neighbor! Soon you will be able to chat!
+              </Alert>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-12">
+              <br></br>
+              <br></br>
+              <br></br>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

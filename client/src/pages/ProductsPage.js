@@ -8,14 +8,23 @@ import Products from "../../src/pages/Products"
 
 const ProductsPage = (props) => (
   <div>
-    <Hero customClass='smallHero' backgroundImage="../../assets/img/garden.jpg">
-      <h1>Harvest Moon</h1>
-      <h2>Products page</h2>
+    <Hero backgroundImage="../../assets/img/hibiscus4.jpg">
+      <div id="hmLogo" className="animated jello delay-3s"><img src="../../assets/img/hm_logo4.png" />
+        <h2>Orlando</h2>
+      </div>
     </Hero>
+
     <Container style={{ marginTop: 30 }}>
       <Row>
         <Col size="md-12">
-          <Products userid={props.auth.userId}/>
+          <Products userid={props.auth.userId} />
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-12">
+          <br></br>
+          <br></br>
+          <br></br>
         </Col>
       </Row>
     </Container>
