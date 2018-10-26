@@ -113,6 +113,8 @@ class App extends Component {
       description: this.state.description,
       type: this.state.type
     };
+    console.log("newuser");
+    console.log(newUser);
     this.setState({
       username: "",
       password: "",
@@ -124,6 +126,7 @@ class App extends Component {
     });
     const { name } = event.target;
     axios.post(name, newUser).then((data) => {
+      console.log("data");
       if (data.data.isAuthenticated) {
         const { userId, isAuthenticated, username } = data.data;
         this.setState({
@@ -138,7 +141,7 @@ class App extends Component {
           description: data.data.description,
           nickname: data.data.nickname,
           type: data.data.type
-        });
+        }, () => console.log("signed") );
       }
     });
   }
@@ -180,7 +183,7 @@ class App extends Component {
           <Wrapper>
             <Route exact path="/signup" render={() => {
               if (loggedIn) {
-                return <Redirect to="/growers" />
+                return <Redirect to="/products" />
               } else {
                 return <SignUp
                   handleChange={this.handleChange}
@@ -223,7 +226,7 @@ class App extends Component {
             }} />
             <Route exact path="/join" render={() => {
               if (loggedIn) {
-                return <Redirect to="/Growers" />
+                return <Redirect to="/products" />
               } else {
                 return <SignUp
                   handleChange={this.handleChange}

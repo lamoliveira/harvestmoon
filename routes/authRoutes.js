@@ -12,7 +12,8 @@ module.exports = function (passport) {
 				nickname: req.user.nickname,
 				address: req.user.address,
 				description: req.user.description,
-				image: req.user.image
+				image: req.user.image,
+				type: req.user.type
 			});
 			//you can also pass up any other fields you with to expose
 			//for example, 
@@ -30,14 +31,17 @@ module.exports = function (passport) {
 		const newUser = req.body;
 		User.register(newUser,newUser.password,(err,user)=>{
 			if (err){ return res.json(err.message); }
+			console.log("res.json");
+			console.log(user);
 			res.json({
-				userId: req.user._id,
-				username: req.user.username,
+				userId: user._id,
+				username: user.username,
 				isAuthenticated: true,
-				nickname: req.user.nickname,
-				address: req.user.address,
-				description: req.user.description,
-				image: req.user.image
+				nickname: newUser.nickname,
+				address: newUser.address,
+				description: newUser.description,
+				image: newUser.image,
+				type: newUser.type
 			});
 		});
 	});
@@ -52,7 +56,8 @@ module.exports = function (passport) {
 			nickname: req.user.nickname,
 			address: req.user.address,
 			description: req.user.description,
-			image: req.user.image
+			image: req.user.image,
+			type: req.user.type
 		});
 	});
 

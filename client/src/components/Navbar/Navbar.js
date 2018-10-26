@@ -105,6 +105,22 @@ const Navbar = props => (
                         :"" }
           </li>
 
+          <li className="nav-item">
+          {!props.auth.username ?
+            <Link
+              to="/signup"
+              className={
+                window.location.pathname === "/signup"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              {props.auth.username ? "" : "Sign Up"
+              }
+            </Link>
+            :"" }
+
+          </li>
 
 
           <li className="nav-item">
