@@ -87,49 +87,65 @@ const About = () => (
 
     <Container style={{ marginTop: 90 }}>
       <Row>
-        <Col size="md-3">
-          <div><img src="../../assets/img/purple-install.png" /> </div>
+        <Col size="md-3" >
+          <div className="text-center">
+          <a href="/howtogrow"><img src="../../assets/img/purple-install.png" /></a>
           <br></br>
-          <p>
-            GROW
+          <div className="text-center">
+            <p>
+              GROW
       </p>
-       
+          </div>
+
           <p>
             Providing seeds, plants and guidance to urban gardeners.
       </p>
+      </div>
         </Col>
 
 
-        <Col size="md-3">
-          <div><img src="../../assets/img/pink-donate.png" /> </div>
+        <Col size="md-3" >
+          <div className="text-center">
+          <a href="/howtoshare"><img src="../../assets/img/pink-donate.png" /></a>
           <br></br>
-          <p>
-            SHARE
+          <div className="text-center">
+            <p>
+              SHARE
       </p>
+          </div>
           <p>
-            Let our very local network help you share the fresh produce.
+            Let our very local network help
+             you share the fresh produce.
       </p>
+      </div>
         </Col>
-        <Col size="md-3">
-          <div><img src="../../assets/img/kitchen-utensils.png" /> </div>
+        <Col size="md-3" >
+          <div className="text-center">
+          <a href="/search"><img src="../../assets/img/kitchen-utensils.png" /></a>
           <br></br>
-          <p>
-            COOK
+          <div className="text-center">
+            <p>
+              COOK
       </p>
+          </div>
           <p>
-            Are you wondering how to prepare the harvest?  Try our Recipe Finder.
+          Are you Wondering how to prepare the harvest?
       </p>
+      </div>
         </Col>
-        <Col size="md-3">
-          <div><img src="../../assets/img/icon-hands.png" /> </div>
+        <Col size="md-3" >
+          <div className="text-center">
+          <a href="/join"><img src="../../assets/img/icon-hands.png" /></a>
           <br></br>
-          <p>
-            JOIN
+          <div className="text-center">
+            <p>
+              JOIN
       </p>
+          </div>
           <p>
-            Gain access to our gardener's database and our hyper local network.
-      </p> 
-  
+          Gain Access to grower's database and a hyper local network.
+      </p>
+      </div>
         </Col>
       </Row>
 
@@ -162,39 +178,44 @@ const About = () => (
 
     <Container style={{ marginTop: 120 }}>
       <Row>
-  
-        <Col size="md-3">       
-          <div id="facebook"><img src="../../assets/img/facebook.png"/> </div>
-          <br></br>
-          <p>
-          FACEBOOK
-      </p>
 
+        <Col size="md-3">
+          <div className="text-center"> 
+            <a href="https://www.facebook.com/harvestmoonorlando" target="_blank"><img src="../../assets/img/facebook.png" /></a>
+            {/* <a href="https://www.facebook.com/harvestmoonorlando" /> */}
+            {/* <br></br> */}
+            {/* <p>
+              FACEBOOK
+        </p> */}
+        </div>
         </Col>
 
         <Col size="md-3">
-          <div><img src="../../assets/img/instagram.png" /> </div>
-          <br></br>
-          <p>
-          INSTAGRAM
-      </p>
-
+          <div className="text-center">
+          <a href="https://www.instagram.com/harvestmoonorlando/?hl=en" target="_blank"><img src="../../assets/img/instagram.png" /></a>
+          {/* <br></br> */}
+          {/* <p>
+            INSTAGRAM
+      </p> */}
+        </div>
         </Col>
         <Col size="md-3">
-          <div><img src="../../assets/img/youtube.png" /> </div>
-          <br></br>
-          <p>
-          YOUTUBE
-      </p>
-
+          <div className="text-center">
+          <a href="https://www.youtube.com/channel/UC8odxlO3afXk6to0xrUR0OQ" target="_blank"><img src="../../assets/img/youtube.png" /></a>
+          {/* <br></br> */}
+          {/* <p>
+            YOUTUBE
+      </p> */}
+        </div>
         </Col>
         <Col size="md-3">
-          <div><img src="../../assets/img/Octocat.png" /> </div>
-          <br></br>
-          <p>
-          GITHUB
-      </p>
-
+          <div className="text-center">
+          <a href="https://github.com/lamoliveira/harvestmoon" target="_blank"><img src="../../assets/img/Octocat.png" /></a>
+          {/* <br></br> */}
+          {/* <p>
+            GITHUB
+      </p> */}
+        </div>
         </Col>
       </Row>
 
