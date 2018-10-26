@@ -182,7 +182,7 @@ class App extends Component {
               if (loggedIn) {
                 return <Redirect to="/growers" />
               } else {
-                return <SignIn
+                return <SignUp
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit}
                   email={this.state.email}
@@ -213,7 +213,7 @@ class App extends Component {
                   type={this.state.type}
                 />
               } else {
-                return <SignUp
+                return <SignIn
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit}
                   email={this.state.email}
