@@ -32,11 +32,12 @@
 }
 
 .hero h1, .hero h2 {
+  padding-top: 10px;
   color: white;
 }
 
 #hmLogo {
-  padding-top: 160px;
+  padding-top: 180px;
   margin-top: 0;
 }
 

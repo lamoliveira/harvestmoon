@@ -3,22 +3,34 @@ import "./style.css";
 import ImageMed from "../ImageMed";
 import Alert from '../Alert';
 import { Col, Row, Container } from "../../components/Grid";
+import Hero from "../../components/Hero";
 
 //sign up
 
 const SignUp = (props) => {
 	return (
 		<div className="form-group">
-			<h3 className="text-center" >SIGN UP</h3>
 
-			<Container fluid>
+			<Hero backgroundImage="../../assets/img/redLeaf.jpg">
+				<div id="hmLogo" className="animated rubberBand delay-3s"><img src="../../assets/img/hm_logo4.png" />
+					<h2>Orlando</h2>
+				</div>
+			</Hero>
+
+			<Container style={{ marginTop: 30 }}>
+				<Row>
+					<Col size="md-12">
+						<h1 className="text-center">SIGN UP</h1>
+					</Col>
+				</Row>
+
 				<Row>
 					<Col size="lg-4 md-4 sm-12 12">
 						<div className="signup">
 							<ImageMed name={props.nickname + " image"} src={props.image ? props.image : "../../assets/img/crispyLeaf.jpg"} >  </ImageMed>
 						</div>
 					</Col>
-					<Col size="lg-4 md-4 sm-12 12">
+					<Col size="lg-8 md-8 sm-12 12">
 						<form className="search">
 
 							<label>Profile Picture</label><br />

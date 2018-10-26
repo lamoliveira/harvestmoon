@@ -11,3 +11,6 @@ form.search button[type="submit"] {
     width: 50%;
   }
   
+  h1 {
+    padding: 30px;
+  }

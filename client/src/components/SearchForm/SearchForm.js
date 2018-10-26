@@ -7,22 +7,18 @@ const SearchForm = props => (
     <div className="form-group">
       <label htmlFor="breed">Product Name:</label>
       <input
-        
         onChange={props.handleInputChange}
         type="text"
         className="form-control"
         placeholder="Type in a product name to begin. Ex:Banana"
-        id="breed"
-      
-      />
-     
+        id="breed" />
       <button
         type="submit"
         onClick={props.handleFormSubmit}
         className="btn btn-success"
-      >
-        Search
+      >Search
       </button>
+      
     </div>
   </form>
 );

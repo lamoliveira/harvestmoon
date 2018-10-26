@@ -3,9 +3,9 @@ form.search {
   margin-bottom: 10px;
 }
 form.search input{
-  width: 80%;
+  width: 60%;
 }
 form.search button[type="submit"] {
-  float: right;
+  align: right;
   margin-top: 10px;
 }

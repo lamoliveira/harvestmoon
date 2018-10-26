@@ -17,6 +17,7 @@
   "author": "Luiz Oliveira and Tyler Thomson",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
@@ -28,8 +29,8 @@
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
+    "if-env": "^1.0.4",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.4",
-    "if-env": "^1.0.4"
+    "nodemon": "^1.18.4"
   }
 }

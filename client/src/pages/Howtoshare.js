@@ -7,24 +7,22 @@ import Col from "../components/Col";
 const Howtogrow = () => (
   <div>
     <Hero backgroundImage="../../assets/img/spinach3.jpg">
-      <div id="hmLogo"><img src="../../assets/img/hm_logo4.png" /></div>
-      <h2>How To Share</h2>
+      <div id="hmLogo" className="animated tada delay-3s"><img src="../../assets/img/hm_logo4.png" />
+      <h2>Orlando</h2>
+      </div>
     </Hero>
     <Container style={{ marginTop: 30 }}>
       <Row>
-        <Col size="md-4"></Col>
-        <Col size="md-6">
-          <h1>Sharing with Love!</h1>
+        <Col size="md-12">
+          <h1 className="text-center">Sharing with Love!</h1>
           <br></br>
           <br></br>
         </Col>
-        <Col size="md-2"></Col>
       </Row>
 
       <Row>
-        <Col size="md-1"></Col>
-        <Col size="md-2">
-          <div><img src="../../assets/img/pink-donate.png" /> </div>
+        <Col size="md-3">
+          <div className="text-center" ><img src="../../assets/img/pink-donate.png" /> </div>
         </Col>
         <Col size="md-9">
           <p>
