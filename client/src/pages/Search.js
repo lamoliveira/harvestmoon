@@ -92,7 +92,7 @@ class Search extends Component {
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
-              <h1 className="text-center">Search Recipes By Products!</h1>
+              <h1 className="text-center">Search Recipes By Ingredient!</h1>
             </Col>
           </Row>
 
@@ -121,7 +121,6 @@ class Search extends Component {
 
           <Row>
             <Col size="md-12">
-              <p></p>
               <br></br>
               <br></br>
               <br></br>
